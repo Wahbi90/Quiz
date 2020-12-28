@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import axios from 'axios';
 import Response from './Component/Answers.js'
 import FinalScore from './Component/new.js'
+import  "./index.css";
 
 class Math extends Component{
     constructor(props) {
@@ -52,15 +53,16 @@ class Math extends Component{
     render () {
         return (
             <div className="container">
-                <div className="title">JS quiz</div>
+                <div className="title">JS Quiz</div>
+                <div className="quest">
                 { this.state.responses < 7 &&
                 this.state.questionList.map(
                     ({question, answers, correct}) => (
                         <Response question={question} options={answers}
                         score={answer => this.computeAnswer(answer,correct)}/>
                     )
-
                 )}
+                </div>
                 {this.state.responses === 7 ? (
                 <FinalScore score= {this.state.score} playAgain={this.playAgain}/>
                 ) : null}
