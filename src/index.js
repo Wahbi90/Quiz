@@ -5,6 +5,7 @@ import axios from 'axios';
 import Response from './Component/Answers.js'
 import FinalScore from './Component/new.js'
 import  "./index.css";
+import logo from './titelim.png';
 
 class Math extends Component{
     constructor(props) {
@@ -53,7 +54,8 @@ class Math extends Component{
     render () {
         return (
             <div className="container">
-                <div className="title">JS Quiz</div>
+                <div className="title"></div>
+                <img className="logo" src={logo} alt="Logo" />
                 <div className="quest">
                 { this.state.responses < 7 &&
                 this.state.questionList.map(
